@@ -4,7 +4,49 @@ import Image from 'next/image';
 import { getCurrentDate } from '../utils/CurrentDate';
 
 interface inputProps {
-  weatherData: object;
+  weatherData: {
+    coord: {
+      lon: string;
+      lat: string;
+    };
+    weather: [
+      {
+        id: number;
+        main: string;
+        description: string;
+        icon: string;
+      }
+    ];
+    base: string;
+    main: {
+      temp: number;
+      feels_like: number;
+      temp_min: number;
+      temp_max: number;
+      pressure: number;
+      humidity: number;
+    };
+    visibility: number;
+    wind: {
+      speed: number;
+      deg: number;
+    };
+    clouds: {
+      all: number;
+    };
+    dt: number;
+    sys: {
+      type: number;
+      id: number;
+      country: string;
+      sunrise: number;
+      sunset: number;
+    };
+    timezone: number;
+    id: number;
+    name: string;
+    cod: number;
+  };
 }
 
 const Current = ({ weatherData }: inputProps) => {
@@ -63,32 +105,6 @@ const Current = ({ weatherData }: inputProps) => {
         </p>
       </div>
     </div>
-    // <div className="flex flex-col mb-8 md:mb-0 items-start gap-2 w-1/2">
-    //   <div className="flex items-center">
-    //     <div>
-    //       <h1 className="text-3xl text-white">Today</h1>
-    //       <p className="text-white">{currentDate}</p>
-    //     </div>
-    //     {weatherIcon && (
-    //       <div className="bg-white/75 rounded-xl">
-    //         <Image
-    //           src={weatherIcon}
-    //           width={64}
-    //           height={64}
-    //           alt="Weather"
-    //         />
-    //       </div>
-    //     )}
-    //   </div>
-    //   <div>
-    //     <p className="text-5xl text-white">
-    //       {(weatherData.main.temp - 273.15).toFixed()}°C
-    //     </p>
-    //     <span className="text-white">
-    //       {weatherData.weather[0].main}
-    //     </span>
-    //   </div>
-    // </div>
   );
 };
 

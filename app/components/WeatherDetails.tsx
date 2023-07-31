@@ -14,7 +14,49 @@ import { GiWindyStripes } from 'react-icons/gi';
 
 //Defining type for component props
 interface inputProps {
-  weatherData: object;
+  weatherData: {
+    coord: {
+      lon: string;
+      lat: string;
+    };
+    weather: [
+      {
+        id: number;
+        main: string;
+        description: string;
+        icon: string;
+      }
+    ];
+    base: string;
+    main: {
+      temp: number;
+      feels_like: number;
+      temp_min: number;
+      temp_max: number;
+      pressure: number;
+      humidity: number;
+    };
+    visibility: number;
+    wind: {
+      speed: number;
+      deg: number;
+    };
+    clouds: {
+      all: number;
+    };
+    dt: number;
+    sys: {
+      type: number;
+      id: number;
+      country: string;
+      sunrise: number;
+      sunset: number;
+    };
+    timezone: number;
+    id: number;
+    name: string;
+    cod: number;
+  };
 }
 
 const WeatherDetails = ({ weatherData }: inputProps) => {
