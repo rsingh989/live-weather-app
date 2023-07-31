@@ -5,14 +5,14 @@
 import React from 'react';
 import { AiOutlineSearch } from 'react-icons/ai';
 
-interface InputProps {
+interface inputProps {
   fetchLocation: (
     event: React.KeyboardEvent<HTMLInputElement>
   ) => void;
   setLocation: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const Input = ({ fetchLocation, setLocation }: InputProps) => {
+const Input = ({ fetchLocation, setLocation }: inputProps) => {
   return (
     <form className="flex items-center md:w-2/4 w-full">
       <input

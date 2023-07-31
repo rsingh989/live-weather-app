@@ -3,7 +3,11 @@ import React from 'react';
 import Image from 'next/image';
 import { getCurrentDate } from '../utils/CurrentDate';
 
-const Current = ({ weatherData }) => {
+interface inputProps {
+  weatherData: object;
+}
+
+const Current = ({ weatherData }: inputProps) => {
   let icon: string;
   //Function to assign weather icon url based on the current weather data
   const fetchWeatherIcon = () => {
