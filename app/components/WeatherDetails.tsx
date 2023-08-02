@@ -12,7 +12,7 @@ import {
 } from 'react-icons/fa';
 import { GiWindyStripes } from 'react-icons/gi';
 
-const WeatherDetails = ({ weatherData }: InputProps) => {
+const WeatherDetails = ({ weatherData }) => {
   return (
     <div className="w-full md:w-1/3 flex flex-col">
       <div className="flex flex-col md:flex-row md:gap-4 items-center justify-between md:p-4">
