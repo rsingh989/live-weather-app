@@ -2,8 +2,14 @@
 import React from 'react';
 import Image from 'next/image';
 import { getCurrentDate } from '../utils/CurrentDate';
+import { WeatherData } from '../utils/WeatherData';
 
-const Current = ({ weatherData }) => {
+//Defining imported type for props
+interface InputProps {
+  weatherData: WeatherData;
+}
+
+const Current = ({ weatherData }: InputProps) => {
   let icon: string;
   //Function to assign weather icon url based on the current weather data
   const fetchWeatherIcon = () => {

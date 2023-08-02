@@ -1,5 +1,6 @@
 //Dependency Imports
 import React from 'react';
+import { WeatherData } from '../utils/WeatherData';
 import {
   TbTemperaturePlus,
   TbTemperatureMinus,
@@ -12,7 +13,12 @@ import {
 } from 'react-icons/fa';
 import { GiWindyStripes } from 'react-icons/gi';
 
-const WeatherDetails = ({ weatherData }) => {
+//Defining imported type for props
+interface InputProps {
+  weatherData: WeatherData;
+}
+
+const WeatherDetails = ({ weatherData }: InputProps) => {
   return (
     <div className="w-full md:w-1/3 flex flex-col">
       <div className="flex flex-col md:flex-row md:gap-4 items-center justify-between md:p-4">

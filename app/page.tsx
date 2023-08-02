@@ -4,6 +4,7 @@
 //Dependency Imports
 import Image from 'next/image';
 import React, { useState } from 'react';
+import { WeatherData } from './utils/WeatherData';
 
 //Component Imports
 import Input from './components/Input';
@@ -14,50 +15,50 @@ export default function Home() {
   // API Key
   const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
 
-  //Setting types for variables
-  type WeatherData = {
-    coord: {
-      lon: string;
-      lat: string;
-    };
-    weather: [
-      {
-        id: number;
-        main: string;
-        description: string;
-        icon: string;
-      }
-    ];
-    base: string;
-    main: {
-      temp: number;
-      feels_like: number;
-      temp_min: number;
-      temp_max: number;
-      pressure: number;
-      humidity: number;
-    };
-    visibility: number;
-    wind: {
-      speed: number;
-      deg: number;
-    };
-    clouds: {
-      all: number;
-    };
-    dt: number;
-    sys: {
-      type: number;
-      id: number;
-      country: string;
-      sunrise: number;
-      sunset: number;
-    };
-    timezone: number;
-    id: number;
-    name: string;
-    cod: number;
-  };
+  // //Setting types for variables
+  // type WeatherData = {
+  //   coord: {
+  //     lon: string;
+  //     lat: string;
+  //   };
+  //   weather: [
+  //     {
+  //       id: number;
+  //       main: string;
+  //       description: string;
+  //       icon: string;
+  //     }
+  //   ];
+  //   base: string;
+  //   main: {
+  //     temp: number;
+  //     feels_like: number;
+  //     temp_min: number;
+  //     temp_max: number;
+  //     pressure: number;
+  //     humidity: number;
+  //   };
+  //   visibility: number;
+  //   wind: {
+  //     speed: number;
+  //     deg: number;
+  //   };
+  //   clouds: {
+  //     all: number;
+  //   };
+  //   dt: number;
+  //   sys: {
+  //     type: number;
+  //     id: number;
+  //     country: string;
+  //     sunrise: number;
+  //     sunset: number;
+  //   };
+  //   timezone: number;
+  //   id: number;
+  //   name: string;
+  //   cod: number;
+  // };
 
   //Variables for weather data
   const [weatherData, setWeatherData] = useState<WeatherData>();
