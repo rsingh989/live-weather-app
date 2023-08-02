@@ -87,8 +87,8 @@ export default function Home() {
     }
   };
 
-  //Function to fetch location data
-  const fetchLocation = async (
+  //Function to fetch location data when enter is pressed
+  const fetchLocationKeypress = async (
     event: React.KeyboardEvent<HTMLInputElement>
   ) => {
     if (event.key === 'Enter') {
@@ -107,6 +107,26 @@ export default function Home() {
           'Location not found. The weather data is not available.'
         );
       }
+    }
+  };
+
+  //Function to fetch location data when search button is pressed
+  const fetchLocationClick = async (
+    event: React.MouseEvent<HTMLInputElement>
+  ) => {
+    try {
+      const response = await fetch(locationUrl);
+      if (!response.ok) {
+        throw new Error();
+      }
+      const data = await response.json();
+      // console.log(data[0].lat, data[0].lon);
+      return fetchWeather(data[0].lat, data[0].lon);
+    } catch {
+      setLocation('');
+      setWeatherError(
+        'Location not found. The weather data is not available.'
+      );
     }
   };
 
@@ -149,7 +169,8 @@ export default function Home() {
         {/* Input and Logo */}
         <div className="flex flex-col-reverse md:flex-row items-center justify-between p-12">
           <Input
-            fetchLocation={fetchLocation}
+            fetchLocationKeypress={fetchLocationKeypress}
+            fetchLocationClick={fetchLocationClick}
             setLocation={setLocation}
           />
           <a href="/">
