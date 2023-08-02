@@ -23,7 +23,7 @@ export default function Home() {
   const [location, setLocation] = useState('');
 
   //URL: Location API Call
-  const locationUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${location}&limit=1&appid=${API_KEY}`;
+  const locationUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${location}&limit=1&appid=${API_KEY}`;
 
   //Function to fetch weather data
   const fetchWeather = async (lat: string, lon: string) => {
