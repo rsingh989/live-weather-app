@@ -4,10 +4,10 @@ import Image from 'next/image';
 import { getCurrentDate } from '../utils/CurrentDate';
 import { WeatherData } from '../utils/WeatherData';
 
-//Defining imported type for props
-interface InputProps {
-  weatherData: WeatherData;
-}
+// //Defining imported type for props
+// interface InputProps {
+//   weatherData: WeatherData;
+// }
 
 const Current = ({ weatherData }: InputProps) => {
   let icon: string;
