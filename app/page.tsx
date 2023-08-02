@@ -156,7 +156,7 @@ export default function Home() {
   //State: Weather Data for searched city is available
   else {
     content = (
-      <div className="flex flex-col md:h-2/3 md:flex-row items-center justify-between px-12 pb-16 md:p-24">
+      <div className="flex flex-col md:h-2/3 md:flex-row items-center justify-between px-8 pb-16 md:p-24">
         <Current weatherData={weatherData} />
         <WeatherDetails weatherData={weatherData} />
       </div>
